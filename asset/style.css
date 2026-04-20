@@ -20,15 +20,15 @@
     }
 
     [data-theme="light"] {
-      --accent: #b88700;
+      --accent: #173aec;
       --accent2: #d95100;
       --bg: #f8f6f1;
       --bg2: #f0ede6;
       --bg3: #e6e1d7;
       --surface: #ffffff;
-      --border: #c9c2b4;
-      --text: #1e1b14;
-      --text-muted: #5f584a;
+      --border: #efa50f;
+      --text:  #ffd209;
+      --text-muted: #ffd209;
       --nav-bg: rgba(248,246,241,0.9);
     }
 
