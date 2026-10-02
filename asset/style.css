@@ -7,8 +7,6 @@
     }
 
     [data-theme="dark"] {
-      --accent: #FDDA0D;
-      --accent2: #ff3b00;
       --bg: #0a0a0a;
       --bg2: #111111;
       --bg3: #181818;
@@ -20,16 +18,14 @@
     }
 
     [data-theme="light"] {
-      --accent: #173aec;
-      --accent2: #d95100;
-      --bg: #f8f6f1;
-      --bg2: #f0ede6;
-      --bg3: #e6e1d7;
-      --surface: #ffffff;
-      --border: #efa50f;
-      --text:  #ffd209;
-      --text-muted: #ffd209;
-      --nav-bg: rgba(248,246,241,0.9);
+      --bg: #f6f1e7;
+      --bg2: #ede6da;
+      --bg3: #e2d8c8;
+      --surface: #fffaf1;
+      --border: #cdbfa9;
+      --text: #1a1510;
+      --text-muted: #5c5143;
+      --nav-bg: rgba(246,241,231,0.9);
     }
 
     /* ─── Reset & Base ──────────────────────────────────────────── */
@@ -233,10 +229,6 @@
       margin-bottom: 50px;
       animation: heroIn 1s 0.2s var(--transition) both;
     }
-    .hero-verse {
-      color: var(--text);
-      font-weight: 600;
-    }
     .hero-actions {
       display: flex; gap: 16px; align-items: center;
       animation: heroIn 1s 0.35s var(--transition) both;
@@ -251,6 +243,10 @@
       transition: all 0.2s; text-decoration: none; display: inline-block;
     }
     .btn-primary:hover { background: #fff; transform: translateY(-2px); }
+    [data-theme="light"] .btn-primary:hover {
+      background: #1a1510;
+      color: #f6f1e7;
+    }
     .btn-ghost {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 0.75rem; font-weight: 700;
@@ -262,6 +258,9 @@
       transition: all 0.2s; text-decoration: none; display: inline-block;
     }
     .btn-ghost:hover { border-color: var(--text); }
+    [data-theme="light"] .btn-ghost:hover {
+      background: rgba(26, 21, 16, 0.06);
+    }
 
     .hero-right {
       position: relative;

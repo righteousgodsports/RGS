@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Barlow", sans-serif;
+  
+  --animate-fade-in: fade-in 0.3s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  --animate-scale-in: scale-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-in-right: slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-toast-bar: toast-bar 3.5s linear forwards;
+  --animate-particle-float: particle-float 8s ease-in-out infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes toast-bar {
+    from { width: 100%; }
+    to { width: 0%; }
+  }
+  @keyframes particle-float {
+    0%, 100% { opacity: 0; transform: translateY(0) scale(1); }
+    10% { opacity: 0.15; }
+    50% { transform: translateY(-100px) scale(1.5); }
+    90% { opacity: 0.15; }
+  }
+
+  @keyframes heroIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* ─── Custom CSS Variables ─────────────────────────────────────────── */
+:root {
+  --accent: #FDDA0D;
+  --accent2: #ff3b00;
+  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #181818;
+  --surface: #1e1e1e;
+  --border: #2a2a2a;
+  --text: #f0ede8;
+  --text-muted: #eab60b;
+  --nav-bg: rgba(10,10,10,0.88);
+}
+
+[data-theme="light"] {
+  --bg: #f6f1e7;
+  --bg2: #ede6da;
+  --bg3: #e2d8c8;
+  --surface: #fffaf1;
+  --border: #cdbfa9;
+  --text: #1a1510;
+  --text-muted: #5c5143;
+  --nav-bg: rgba(246,241,231,0.9);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Barlow", sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0b0e; }
+::-webkit-scrollbar-thumb { background: #2a2d3a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #353848; }
+
+/* Custom reveal classes for public site */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* Admin Base Override */
+body:has(#admin-layout) {
+  background: #0a0b0e;
+  color: #e8e6f0;
+}
